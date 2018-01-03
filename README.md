@@ -1,4 +1,4 @@
-# Drusilla_Ext: External Version of Drusilla Select
+# Drusilla_Ext: External Version of Drusilla_Select
 
 Version: 1.0.0
 
