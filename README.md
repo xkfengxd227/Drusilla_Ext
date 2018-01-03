@@ -1,4 +1,4 @@
-# Drusilla_Ext
+# Drusilla_Ext: External Version of Drusilla Select
 
 Version: 1.0.0
 
@@ -12,10 +12,10 @@ This package is written in the C++ programming language. Drusilla_Ext is
 an external version of Drusilla_Select, which is used for c-Approximate 
 Furthest Neighbor (or simply c-AFN) search under Euclidean distance. 
 
-The original Drusilla_Select was an internal algorithm which was proposed 
-by Dr. Ryan Curtin and Dr. Andrew Gardner. We adapt the original one into 
-an external algorithm used for our comparison with RQALSH and RQALSH* in 
-our ICDE 2017 and TKDE 2017 papers. 
+The original Drusilla_Select is an internal algorithm which was proposed 
+by Dr. Ryan Curtin and Dr. Andrew Gardner in their SISAP 2015 paper. We 
+adapt the original one into an external algorithm used for our comparison 
+with RQALSH and RQALSH* in our ICDE 2017 and TKDE 2017 papers. 
 
 
 How to use this Package?
