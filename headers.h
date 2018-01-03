@@ -14,7 +14,7 @@
 // Authors: Qiang Huang  (huangq2011@gmail.com)
 //
 // Created on:       2016-09-24
-// Version 0.1
+// Version 1.0.0
 // -----------------------------------------------------------------------------
 
 #include <stdio.h>
