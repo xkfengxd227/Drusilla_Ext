@@ -61,7 +61,7 @@ The paper for Drusilla_Select has been published in SISAP 2016, which is display
 as follows:
 
 * **Ryan R. Curtin and Andrew B. Gardner. Fast approximate furthest neighbors with 
-data-dependent candidate selection." International Conference on Similarity Search 
+data-dependent candidate selection. International Conference on Similarity Search 
 and Applications (SISAP), 221 - 235, 2016.**
 
 If you use the package for publications, please cite their paper above.
