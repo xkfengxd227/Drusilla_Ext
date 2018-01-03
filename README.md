@@ -2,7 +2,7 @@
 
 Version: 1.0.0
 
-Release date: 1 January 2018
+Release date: 3 January 2018
 
 
 Introduction
