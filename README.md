@@ -8,14 +8,14 @@ Release date: 1 January 2018
 Introduction
 --------
 
-This package is written in the C++ programming language. Drusilla_Ext is an 
-external version of Drusilla_Select, which is used c-Approximate Furthest 
-Neighbor (or simply c-AFN) search under Euclidean distance. 
+This package is written in the C++ programming language. Drusilla_Ext is 
+an external version of Drusilla_Select, which is used for c-Approximate 
+Furthest Neighbor (or simply c-AFN) search under Euclidean distance. 
 
-The original Drusilla_Select was an internal algorithm which was proposed by 
-Dr. Ryan Curtin and Dr. Andrew Gardner. We adapt the original one into an
-external algorithm used for our comparison in our ICDE 2017 and TKDE 2017 
-papers which was mentioned in the package of RQALSH. 
+The original Drusilla_Select was an internal algorithm which was proposed 
+by Dr. Ryan Curtin and Dr. Andrew Gardner. We adapt the original one into 
+an external algorithm used for our comparison with RQALSH and RQALSH* in 
+our ICDE 2017 and TKDE 2017 papers. 
 
 
 How to use this Package?
@@ -28,8 +28,8 @@ provide a sample dataset and query set (i.e., Mnist) for your reference.
 
 We also provide the scripts (i.e., run_sift.sh, run_gist.sh, run_trevi.sh,
 and run_p53.sh) for the users who would like to reproduce our results 
-presented in ICDE 2017 and TKDE 2017. The datasets Sift, Gist, Trevi, and 
-P53 we used can be downloaded from the following links:
+presented in our ICDE 2017 and TKDE 2017 papers. The datasets Sift, Gist, 
+Trevi, and P53 we used can be downloaded from the following links:
 
 * Sift: https://drive.google.com/open?id=1tgcUU9X61TehVa_Klj5skVdYRoYZ7CgX
 
@@ -62,6 +62,6 @@ as follows:
 
 * **Ryan R. Curtin and Andrew B. Gardner. Fast approximate furthest neighbors with 
 data-dependent candidate selection." International Conference on Similarity Search 
-and Applications (SISAP). Springer International Publishing, 2016.**
+and Applications (SISAP), 221 - 235, 2016.**
 
 If you use the package for publications, please cite their paper above.
