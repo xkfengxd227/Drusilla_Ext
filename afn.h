@@ -1,33 +1,33 @@
-#ifndef __APPROXIMATE_FURTHEST_NEIGHBOR_H
-#define __APPROXIMATE_FURTHEST_NEIGHBOR_H
+#ifndef __AFN_H
+#define __AFN_H
 
 // -----------------------------------------------------------------------------
-int ground_truth(					// output ground truth (data in memory)
-	int   n,							// number of data points
-	int   qn,							// number of query points
-	int   d,							// dimension of space
-	char* data_set,						// address of data set
-	char* query_set,					// address of query set
-	char* truth_set);					// address of ground truth file
+int ground_truth(					// find ground truth
+	int   n,							// number of data  objects
+	int   qn,							// number of query objects
+	int   d,							// dimensionality
+	const char *data_set,				// address of data  set
+	const char *query_set,				// address of query set
+	const char *truth_set);				// address of truth set
 	
 // -----------------------------------------------------------------------------
-int indexing(						// build hash tables for the dataset
-	int   n,							// number of data points
-	int   d,							// dimension of space
+int indexing(						// indexing of Drusilla_Select
+	int   n,							// number of data objects
+	int   d,							// dimensionality
 	int   B,							// page size
 	int   l,							// number of projections
 	int   m,							// number of candidates on each proj
-	char* data_set,						// address of data set
-	char* data_folder,					// folder to store new format of data
-	char* output_folder);				// output folder
+	const char *data_set,				// address of data set
+	const char *data_folder,			// folder to store new format of data
+	const char *output_folder);			// output folder
 
 // -----------------------------------------------------------------------------
-int drusilla_select(				// c-k-AFN via DrusillaSelect
-	int   qn,							// number of query points
+int drusilla_select(				// c-k-AFN via Drusilla_Select
+	int   qn,							// number of query objects
 	int   d,							// dimensionality
-	char* query_set,					// address of query set
-	char* truth_set,					// address of ground truth file
-	char* data_folder,					// folder to store new format of data
-	char* output_folder);				// output folder
+	const char *query_set,				// address of query set
+	const char *truth_set,				// address of truth set
+	const char *data_folder,			// folder to store new format of data
+	const char *output_folder);			// output folder
 
-#endif
+#endif // __AFN_H

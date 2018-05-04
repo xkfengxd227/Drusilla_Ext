@@ -2,81 +2,33 @@
 make
 rm *.o
 
-
+# ------------------------------------------------------------------------------
+#  Parameters
+# ------------------------------------------------------------------------------
+dname=Gist
 n=999000
+qn=1000
 d=960
 B=16384
-dname=Gist
-
-qn=1000
-c=2.0
 dPath=./data/${dname}/${dname}
 dFolder=./data/${dname}/
 
-./drusilla -alg 0 -n ${n} -qn ${qn} -d ${d} -ds ${dPath}.ds -qs ${dPath}.q -ts ${dPath}ID.fn2.0
+# ------------------------------------------------------------------------------
+#  Running Scripts
+# ------------------------------------------------------------------------------
+L_list=(2 3 4 5 6 8 12) 
+M_list=(12 8 6 5 4 3 2)
+length=`expr ${#L_list[*]} - 1`
 
+for j in $(seq 0 ${length})
+do 
+  l=${L_list[j]}
+  m=${M_list[j]}
+  oFolder=./results2.0/${dname}/drusilla/${l}-${m}/
 
-################################################################################
-l=2
-m=12
-oFolder=./results/${dname}/${l}-${m}/
+  ./drusilla -alg 1 -n ${n} -d ${d} -B ${B} -l ${l} -m ${m} -ds ${dPath}.ds \
+    -df ${dFolder} -of ${oFolder}
 
-./drusilla -alg 1 -n ${n} -d ${d} -B ${B} -l ${l} -m ${m} -ds ${dPath}.ds -df ${dFolder} -of ${oFolder}
-./drusilla -alg 2 -qn ${qn} -d ${d} -qs ${dPath}.q -ts ${dPath}ID.fn2.0 -df ${dFolder} -of ${oFolder}
-
-
-################################################################################
-l=3
-m=8
-oFolder=./results/${dname}/${l}-${m}/
-
-./drusilla -alg 1 -n ${n} -d ${d} -B ${B} -l ${l} -m ${m} -ds ${dPath}.ds -df ${dFolder} -of ${oFolder}
-./drusilla -alg 2 -qn ${qn} -d ${d} -qs ${dPath}.q -ts ${dPath}ID.fn2.0 -df ${dFolder} -of ${oFolder}
-
-
-################################################################################
-l=4
-m=6
-oFolder=./results/${dname}/${l}-${m}/
-
-./drusilla -alg 1 -n ${n} -d ${d} -B ${B} -l ${l} -m ${m} -ds ${dPath}.ds -df ${dFolder} -of ${oFolder}
-./drusilla -alg 2 -qn ${qn} -d ${d} -qs ${dPath}.q -ts ${dPath}ID.fn2.0 -df ${dFolder} -of ${oFolder}
-
-
-################################################################################
-l=5
-m=5
-oFolder=./results/${dname}/${l}-${m}/
-
-./drusilla -alg 1 -n ${n} -d ${d} -B ${B} -l ${l} -m ${m} -ds ${dPath}.ds -df ${dFolder} -of ${oFolder}
-./drusilla -alg 2 -qn ${qn} -d ${d} -qs ${dPath}.q -ts ${dPath}ID.fn2.0 -df ${dFolder} -of ${oFolder}
-
-
-################################################################################
-l=6
-m=4
-oFolder=./results/${dname}/${l}-${m}/
-
-./drusilla -alg 1 -n ${n} -d ${d} -B ${B} -l ${l} -m ${m} -ds ${dPath}.ds -df ${dFolder} -of ${oFolder}
-./drusilla -alg 2 -qn ${qn} -d ${d} -qs ${dPath}.q -ts ${dPath}ID.fn2.0 -df ${dFolder} -of ${oFolder}
-
-
-################################################################################
-l=8
-m=3
-oFolder=./results/${dname}/${l}-${m}/
-
-./drusilla -alg 1 -n ${n} -d ${d} -B ${B} -l ${l} -m ${m} -ds ${dPath}.ds -df ${dFolder} -of ${oFolder}
-./drusilla -alg 2 -qn ${qn} -d ${d} -qs ${dPath}.q -ts ${dPath}ID.fn2.0 -df ${dFolder} -of ${oFolder}
-
-
-################################################################################
-l=12
-m=2
-oFolder=./results/${dname}/${l}-${m}/
-
-./drusilla -alg 1 -n ${n} -d ${d} -B ${B} -l ${l} -m ${m} -ds ${dPath}.ds -df ${dFolder} -of ${oFolder}
-./drusilla -alg 2 -qn ${qn} -d ${d} -qs ${dPath}.q -ts ${dPath}ID.fn2.0 -df ${dFolder} -of ${oFolder}
-
-
-
+  ./drusilla -alg 2 -qn ${qn} -d ${d} -qs ${dPath}.q -ts ${dPath}.fn2.0 \
+    -df ${dFolder} -of ${oFolder}
+done

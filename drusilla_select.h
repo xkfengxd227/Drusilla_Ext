@@ -2,58 +2,55 @@
 #define __DRUSILLA_SELECT_H
 
 // -----------------------------------------------------------------------------
-//  Basic Data Structure for Approximate Furthest Neighbor Search
-// -----------------------------------------------------------------------------
-struct Score_Pair {
-	int obj;
-	float score;
-};
-
-// -----------------------------------------------------------------------------
-//  Comparison Function for qsort
-// -----------------------------------------------------------------------------
-int score_compar(
-	const void* xv,
-	const void* yv);
-
-// -----------------------------------------------------------------------------
-//  Drusilla_Index: structure of DrusillaSelect, which is used to solve the 
-//  problem of approximate furthest neighbor search.
+//  Drusilla_Index: data structure of Drusilla_Select for c-k-AFN search
 // -----------------------------------------------------------------------------
 class Drusilla_Index {
 public:
-	Drusilla_Index();				// constructor
+	Drusilla_Index();				// default constructor
 	~Drusilla_Index();				// destructor
 
 	// -------------------------------------------------------------------------
-	void build(						// build index of DrusillaSelect
-		int   n,						// number of data points
+	int build(						// build index
+		int   n,						// number of data objects
 		int   d,						// number of dimensions
 		int   l,						// number of projections
 		int   m,						// number of candidates on each proj
 		int   B,						// page size
-		char* output_folder,			// output folder
-		float** data);					// dataset
+		const char *index_path,			// index path
+		const float **data);			// data objects
 
 	// -------------------------------------------------------------------------
-	int load(						// load index of DrusillaSelect
-		char* output_folder);			// output folder
+	int load(						// load index
+		const char *index_path);		// index path
 
 	// -------------------------------------------------------------------------
-	int search(						// c-k-afn search via DrusillaSelect
-		float* query,					// query point
-		char* data_folder,				// folder to store new format of data
+	int search(						// c-k-AFN search
+		const float *query,				// query object
+		const char *data_folder,		// new format data folder
 		MaxK_List* list);				// top-k results (return)
 
 protected:
-	int num_points_;				// number of data objects <n>
-	int num_dimensions_;			// dimensionality <d>
-	int num_projections_;			// number of random projections <l>
-	int num_candidates_;			// number of candidates <m>
-	int B_;							// page size in words <B>
+	int  n_pts_;					// number of data objects
+	int  dim_;						// dimensionality
+	int  l_;						// number of random projections
+	int  m_;						// number of candidates
+	int  B_;						// page size
 
-	char index_set_[200];			// address of index file
-	int* fn_candidates_;			// candidates on each projection
+	char fname_[200];				// address of index
+	int  *fn_cand_;					// candidates on each projection
+
+	// -------------------------------------------------------------------------
+	int bulkload(					// build hash tables
+		const float **data);			// data objects
+
+	// -------------------------------------------------------------------------
+	void display();					// display parameters
+
+	// -------------------------------------------------------------------------
+	int write_params();				// write parameters to disk
+
+	// -------------------------------------------------------------------------
+	int read_params();				// read parameters from disk
 };
 
-#endif
+#endif // __DRUSILLA_SELECT_H
