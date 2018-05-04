@@ -1,8 +1,10 @@
 # Drusilla_Ext: External Version of Drusilla_Select
 
-Version: 1.0.0
+Version: 1.0.1
 
-Release date: 3 January 2018
+Release date:  03-01-2018
+
+Last Modified: 04-05-2018
 
 
 Introduction
@@ -64,4 +66,7 @@ as follows:
 data-dependent candidate selection. International Conference on Similarity Search 
 and Applications (SISAP), 221 - 235, 2016.**
 
-If you use the package for publications, please cite their paper above.
+* **Ryan R. Curtin, Javier Echauz, and Andrew B. Gardner. Exploiting the structure 
+of furthest neighbor search for fast approximate results. Information Systems, 2018.**
+
+If you use the package for publications, please cite their papers above.
