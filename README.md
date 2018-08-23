@@ -42,17 +42,6 @@ Trevi, and P53 we used can be downloaded from the following links:
 * P53: https://drive.google.com/open?id=1hjGvcq29WsgHpGoz0vCdCYAUR453aY29
 
 
-Necessary Notes
---------
-
-Modifications for more k values
----
-To increase the k value so that can support e.g., 100-AFN search, we need to modify the following files:
-- def.h:39            MAXK
-- afn.cc:220          kFNs, max_round
-- afn.cc:221          max_round
-
-
 Authors
 --------
 
