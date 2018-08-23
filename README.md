@@ -52,10 +52,6 @@ To increase the k value so that can support e.g., 100-AFN search, we need to mod
 - afn.cc:220          kFNs, max_round
 - afn.cc:221          max_round
 
-Parameters
----
-l*m=I/O
-
 
 Authors
 --------
